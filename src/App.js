@@ -30,11 +30,11 @@ class App extends Component {
       });
   }
   inputSearch = (e) => {
-    alert("hola");
-    // const iSearch = e.currentTarget.value;
-    // this.setState({
-    //   searchName: iSearch
-    // });
+    // alert("hola");
+    const iSearch = e.currentTarget.value;
+    this.setState({
+      searchName: iSearch
+    });
   }
 
   filterLanguage(e) {

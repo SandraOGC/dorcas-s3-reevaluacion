@@ -1,13 +1,14 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 .info_container{
   display: flex;
-
+  flex-wrap: wrap;
 }
 .info_repo{
   display: flex;
-flex-direction: row;
+  width: 33%;
+
 }
 .info_repo--ul{
   list-style: none;
