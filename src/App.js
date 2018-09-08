@@ -22,9 +22,9 @@ class App extends Component {
   })
   .then(dataJson => {
     console.log(dataJson);
-    const repo ={
-      
-    }
+    this.setState({
+      dataRepo: dataJson
+    })
   })
 }
 
@@ -40,10 +40,11 @@ componentDidMount(){
         <select name="" id="">
         <option value="Css">Css</option>
           <option value="React">React</option>
-          <option value="javascript">javascript</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="HTML">HTML</option>
         </select>
+        <RepoList dataRepo = {this.state.dataRepo}/>
         <Repo/>
-        <RepoList/>
         <Search/>
       <div>
 
