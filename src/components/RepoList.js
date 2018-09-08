@@ -1,6 +1,9 @@
 import React from "react";
 
 class RepoList extends React.Component {
+
+
+
   render() {
     return (
       <div className="info_container">
@@ -21,8 +24,7 @@ class RepoList extends React.Component {
                   <li className="info_repo--list">{data.name}</li>
                   <p className="info_repo--description">{data.description}</p>
                   <p className="info_repo--language">
-                    <i class="fas fa-circle" />
-                    {data.language}
+                  <i class={`fas fa-circle ${data.language}`} />{data.language}
                   </p>
                 </ul>
               </div>

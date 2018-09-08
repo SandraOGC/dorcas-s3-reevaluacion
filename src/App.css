@@ -4,6 +4,8 @@
 .info_container{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 .info_repo{
   display: flex;
@@ -13,7 +15,12 @@
 .info_repo--ul{
   list-style: none;
 }
-.button_select{
-
-
+.HTML{
+color: blueviolet;
+}
+.CSS{
+  color: blue; 
+}
+.JavaScript{
+  color: yellowgreen;
 }

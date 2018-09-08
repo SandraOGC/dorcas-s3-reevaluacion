@@ -59,8 +59,7 @@ class App extends Component {
           onChange={this.filterLanguage}
         >
           <option value="">Filtrar</option>
-          <option value="Css">Css</option>
-          <option value="React">React</option>
+          <option value="CSS">CSS</option>
           <option value="JavaScript">JavaScript</option>
           <option value="HTML">HTML</option>
         </select>
