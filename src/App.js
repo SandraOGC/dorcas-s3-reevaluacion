@@ -1,18 +1,54 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Repo from "./components/Repo";
+import RepoList from "./components/RepoList";
+import Search from "./components/Search";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataRepo: []
+    };
+    this.getRepo = this.getRepo.bind(this);
+  }
+
+        
+  getRepo() {
+  fetch("https://api.github.com/orgs/Adalab/repos")
+  .then(data => {
+    
+    return data.json();
+  })
+  .then(dataJson => {
+    console.log(dataJson);
+    const repo ={
+      
+    }
+  })
+}
+
+componentDidMount(){
+  this.getRepo();
+}
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>Repos at Adalab in GitHub</h1>
+        <input></input>
+        <select name="" id="">
+        <option value="Css">Css</option>
+          <option value="React">React</option>
+          <option value="javascript">javascript</option>
+        </select>
+        <Repo/>
+        <RepoList/>
+        <Search/>
+      <div>
+
+      </div>
+
       </div>
     );
   }
