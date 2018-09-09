@@ -30,12 +30,12 @@ class App extends Component {
         });
       });
   }
-  inputSearch = (e) => {
+  inputSearch = e => {
     const iSearch = e.currentTarget.value;
     this.setState({
       searchName: iSearch
     });
-  }
+  };
 
   filterLanguage(e) {
     const resultado = e.currentTarget.value;
@@ -51,35 +51,41 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <div className="title_container">
-        <h1>Repos at Adalab in GitHub</h1>
-        <Search 
-        inputSearch={this.inputSearch}
-        filterLanguage={this.filterLanguage}/>
+        <div className="title_container">
+          <h1>Repos at Adalab in GitHub</h1>
+          <Search
+            inputSearch={this.inputSearch}
+            filterLanguage={this.filterLanguage}
+          />
         </div>
         <Switch>
-          <Route exactpath="/" render={() =>(
-        <RepoList
-          dataRepo={this.state.dataRepo}
-          filterLanguage={this.state.filterLanguage}
-          language={this.state.language}
-          inputSearch={this.inputSearch}
-          searchName={this.state.searchName}
-        />
-          )}
+          <Route
+            exactpath="/"
+            render={() => (
+              <RepoList
+                dataRepo={this.state.dataRepo}
+                filterLanguage={this.state.filterLanguage}
+                language={this.state.language}
+                inputSearch={this.inputSearch}
+                searchName={this.state.searchName}
+              />
+            )}
           />
-          <Route path="/Repo/:id" render={props => {
-            if (this.state.dataRepo.length !== 0) {
-              return (
-        <Repo 
-        match={props.match.params.id}
-        dataRepo={this.state.dataRepo}/>
-              );
-            }else{
-              return <p>No more info</p>
-            }
-          }}
-        />
+          <Route
+            path="/Repo/:id"
+            render={props => {
+              if (this.state.dataRepo.length !== 0) {
+                return (
+                  <Repo
+                    match={props.match.params.name}
+                    dataRepo={this.state.dataRepo}
+                  />
+                );
+              } else {
+                return <p>No more info</p>;
+              }
+            }}
+          />
         </Switch>
       </div>
     );
