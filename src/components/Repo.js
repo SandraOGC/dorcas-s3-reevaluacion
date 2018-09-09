@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 class Repo extends React.Component {
   
   render() {
-alert('Hello Anna');
     return (
       <React.Fragment>
         <div className="moreInfo">
