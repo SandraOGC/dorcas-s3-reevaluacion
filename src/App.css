@@ -1,6 +1,7 @@
-/* .App {
+.title_container {
   text-align: center;
-} */
+  margin-bottom: 40px;
+} 
 .info_container{
   display: flex;
   flex-wrap: wrap;
@@ -16,10 +17,10 @@
   list-style: none;
 }
 .HTML{
-color: blueviolet;
+color: rgb(151, 102, 197);
 }
 .CSS{
-  color: blue; 
+  color: rgb(255, 136, 0); 
 }
 .JavaScript{
   color: yellowgreen;

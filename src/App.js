@@ -3,6 +3,7 @@ import "./App.css";
 import Repo from "./components/Repo";
 import RepoList from "./components/RepoList";
 import Search from "./components/Search";
+import { Route, Switch } from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
@@ -30,7 +31,6 @@ class App extends Component {
       });
   }
   inputSearch = (e) => {
-    // alert("hola");
     const iSearch = e.currentTarget.value;
     this.setState({
       searchName: iSearch
@@ -51,18 +51,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <div className="title_container">
         <h1>Repos at Adalab in GitHub</h1>
-        <input type="text" name="s_repo" onKeyUp={this.inputSearch} />
-        <select className="button_select"
-          name="s_language"
-          id="s_language"
-          onChange={this.filterLanguage}
-        >
-          <option value="">Filtrar</option>
-          <option value="CSS">CSS</option>
-          <option value="JavaScript">JavaScript</option>
-          <option value="HTML">HTML</option>
-        </select>
+        <Search 
+        inputSearch={this.inputSearch}
+        filterLanguage={this.filterLanguage}/>
+        </div>
+        <Switch>
+          <Route exactpath="/" render={() =>(
         <RepoList
           dataRepo={this.state.dataRepo}
           filterLanguage={this.state.filterLanguage}
@@ -70,9 +66,21 @@ class App extends Component {
           inputSearch={this.inputSearch}
           searchName={this.state.searchName}
         />
-        <Repo />
-        <Search />
-        <div />
+          )}
+          />
+          <Route path="/Repo/:id" render={props => {
+            if (this.state.dataRepo.length !== 0) {
+              return (
+        <Repo 
+        match={props.match.params.id}
+        dataRepo={this.state.dataRepo}/>
+              );
+            }else{
+              return <p>No more info</p>
+            }
+          }}
+        />
+        </Switch>
       </div>
     );
   }
