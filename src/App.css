@@ -15,6 +15,12 @@
 }
 .info_repo--ul{
   list-style: none;
+  width: 300px;
+}
+.info_repo--list{
+  font-weight: bold;
+  font-size: 20px;
+  
 }
 .HTML{
 color: rgb(151, 102, 197);
@@ -24,4 +30,16 @@ color: rgb(151, 102, 197);
 }
 .JavaScript{
   color: yellowgreen;
+}
+.moreInfo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info-repo--icons{
+  display: flex;
+  justify-content: space-between;
+}
+.text-return{
+  text-align: center;
 }
