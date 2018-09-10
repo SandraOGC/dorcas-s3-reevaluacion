@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataRepo: [],
+      moreinfo: [],
       language: "",
       searchName: ""
     };
@@ -25,7 +25,7 @@ class App extends Component {
       .then(dataJson => {
         console.log(dataJson);
         this.setState({
-          dataRepo: dataJson
+          moreinfo: dataJson
         });
       });
   }
@@ -57,7 +57,7 @@ class App extends Component {
             path="/"
             render={() => (
               <RepoList
-                dataRepo={this.state.dataRepo}
+                moreinfo={this.state.moreinfo}
                 filterLanguage={this.state.filterLanguage}
                 language={this.state.language}
                 inputSearch={this.inputSearch}
@@ -68,22 +68,18 @@ class App extends Component {
           <Route
             path="/Repo/:id"
             render={props => {
-              if (this.state.dataRepo.length !== 0) {
+              if (this.state.moreinfo.length !== 0) {
                 return (
                   <Repo
-                    match={props.match.params.name}
-                    dataRepo={this.state.dataRepo}
-                    filterLanguage={this.filterLanguage}
-                    language={this.state.language}
-                    inputSearch={this.inputSearch}
-                    searchName={this.state.searchName}
+                    match={props.match}
+                    moreinfo={this.state.moreinfo}
                   />
                 );
               } else {
                 return <p>No more info</p>;
               }
             }}
-          />
+          /> 
         </Switch>
       </div>
     );
