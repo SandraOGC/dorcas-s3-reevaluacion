@@ -31,3 +31,15 @@ color: rgb(151, 102, 197);
 .JavaScript{
   color: yellowgreen;
 }
+.moreInfo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info-repo--icons{
+  display: flex;
+  justify-content: space-between;
+}
+.text-return{
+  text-align: center;
+}

@@ -23,7 +23,6 @@ class App extends Component {
         return data.json();
       })
       .then(dataJson => {
-        console.log(dataJson);
         this.setState({
           moreinfo: dataJson
         });
@@ -50,7 +49,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
         <Switch>
           <Route
             exact
@@ -70,16 +68,13 @@ class App extends Component {
             render={props => {
               if (this.state.moreinfo.length !== 0) {
                 return (
-                  <Repo
-                    match={props.match}
-                    moreinfo={this.state.moreinfo}
-                  />
+                  <Repo match={props.match} moreinfo={this.state.moreinfo} />
                 );
               } else {
                 return <p>No more info</p>;
               }
             }}
-          /> 
+          />
         </Switch>
       </div>
     );
