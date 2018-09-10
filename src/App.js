@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import Repo from "./components/Repo";
 import RepoList from "./components/RepoList";
-// import Search from "./components/Search";
 import { Route, Switch } from "react-router-dom";
 
 class App extends Component {
@@ -74,6 +73,10 @@ class App extends Component {
                   <Repo
                     match={props.match.params.name}
                     dataRepo={this.state.dataRepo}
+                    filterLanguage={this.filterLanguage}
+                    language={this.state.language}
+                    inputSearch={this.inputSearch}
+                    searchName={this.state.searchName}
                   />
                 );
               } else {
