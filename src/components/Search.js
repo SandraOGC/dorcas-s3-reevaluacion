@@ -3,7 +3,8 @@ import React from "react";
 class Search extends React.Component {
   render() {
     return (
-      <React.Fragment>
+      <div className="title_container">
+        <h1>Repos at Adalab in GitHub</h1>
         <input
           type="text"
           name="s_repo"
@@ -21,7 +22,7 @@ class Search extends React.Component {
           <option value="JavaScript">JavaScript</option>
           <option value="HTML">HTML</option>
         </select>
-      </React.Fragment>
+      </div>
     );
   }
 }
