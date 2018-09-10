@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Repo from "./components/Repo";
 import RepoList from "./components/RepoList";
-import Search from "./components/Search";
+// import Search from "./components/Search";
 import { Route, Switch } from "react-router-dom";
 
 class App extends Component {
@@ -51,16 +51,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="title_container">
-          <h1>Repos at Adalab in GitHub</h1>
-          <Search
-            inputSearch={this.inputSearch}
-            filterLanguage={this.filterLanguage}
-          />
-        </div>
+
         <Switch>
           <Route
-            exactpath="/"
+            exact
+            path="/"
             render={() => (
               <RepoList
                 dataRepo={this.state.dataRepo}
