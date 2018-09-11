@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      moreinfo: [],
+      dataRepo: [],
       language: "",
       searchName: ""
     };
@@ -24,7 +24,7 @@ class App extends Component {
       })
       .then(dataJson => {
         this.setState({
-          moreinfo: dataJson
+          dataRepo: dataJson
         });
       });
   }
@@ -55,8 +55,8 @@ class App extends Component {
             path="/"
             render={() => (
               <RepoList
-                moreinfo={this.state.moreinfo}
-                filterLanguage={this.state.filterLanguage}
+                dataRepo={this.state.dataRepo}
+                filterLanguage={this.filterLanguage}
                 language={this.state.language}
                 inputSearch={this.inputSearch}
                 searchName={this.state.searchName}
@@ -66,9 +66,9 @@ class App extends Component {
           <Route
             path="/Repo/:id"
             render={props => {
-              if (this.state.moreinfo.length !== 0) {
+              if (this.state.dataRepo.length !== 0) {
                 return (
-                  <Repo match={props.match} moreinfo={this.state.moreinfo} />
+                  <Repo match={props.match} dataRepo={this.state.dataRepo} />
                 );
               } else {
                 return <p>No more info</p>;

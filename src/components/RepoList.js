@@ -11,7 +11,7 @@ class RepoList extends React.Component {
           filterLanguage={this.props.filterLanguage}
         />
         <div className="info_container">
-          {this.props.moreinfo
+          {this.props.dataRepo
 
             .filter(filtro => {
               return filtro.name
