@@ -36,7 +36,7 @@ class Repo extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="dataRepo">
+        <div className="moreInfo">
           <div className="info_repo">
             <ul className="info_repo--ul">{this.getInfo()}</ul>
           </div>
