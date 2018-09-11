@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 class Repo extends React.Component {
   getInfo() {
-    const data = this.props.moreinfo;
+    const data = this.props.dataRepo;
     //hago un for para indicar la posicion en data para usar la posicion (indice). con maps recorre todo el array
     for (let i = 0; i < data.length; i++) {
       if (parseInt(this.props.match.params.id) === data[i].id) {
@@ -36,7 +36,7 @@ class Repo extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="moreInfo">
+        <div className="dataRepo">
           <div className="info_repo">
             <ul className="info_repo--ul">{this.getInfo()}</ul>
           </div>
